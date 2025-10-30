@@ -4,8 +4,6 @@ package com.example.websocket_demo.client;
 import com.example.websocket_demo.Message;
 
 import javax.swing.*;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
