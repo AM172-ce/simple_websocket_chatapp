@@ -9,9 +9,7 @@ public class App {
             ClientGUI gui;
             try {
                 gui = new ClientGUI();
-            } catch (ExecutionException e) {
-                throw new RuntimeException(e);
-            } catch (InterruptedException e) {
+            } catch (ExecutionException | InterruptedException e) {
                 throw new RuntimeException(e);
             }
             gui.promptForUsernameAndConnect();
