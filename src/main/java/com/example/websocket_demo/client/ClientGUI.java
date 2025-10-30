@@ -119,12 +119,9 @@ public class ClientGUI extends JFrame  implements MessageListener{
         messagePanelScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
         messagePanelScrollPane.getVerticalScrollBar().setUnitIncrement(16);
         messagePanelScrollPane.getVerticalScrollBar().setBackground(Utilities.TRANSPARENT_COLOR);
-        messagePanelScrollPane.getViewport().addChangeListener(new ChangeListener() {
-            @Override
-            public void stateChanged(ChangeEvent e) {
-                revalidate();
-                repaint();
-            }
+        messagePanelScrollPane.getViewport().addChangeListener(e -> {
+            revalidate();
+            repaint();
         });
         chatPanel.add(messagePanelScrollPane, BorderLayout.CENTER);
 
