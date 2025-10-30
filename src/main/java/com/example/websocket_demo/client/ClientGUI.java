@@ -42,7 +42,7 @@ public class ClientGUI extends JFrame  implements MessageListener{
             }
         });
 
-        getContentPane().setBackground(Utiltties.PRIMARY_COLOR);
+        getContentPane().setBackground(Utilities.PRIMARY_COLOR);
         addGuiComponents();
     }
 
@@ -90,15 +90,15 @@ public class ClientGUI extends JFrame  implements MessageListener{
     }
     private void addConnectedUserComponents() {
         connectedUsersPanel = new JPanel();
-        connectedUsersPanel.setBorder(Utiltties.addPadding(10, 10, 10, 10));
+        connectedUsersPanel.setBorder(Utilities.addPadding(10, 10, 10, 10));
         connectedUsersPanel.setLayout(new BoxLayout(connectedUsersPanel,
                 BoxLayout.Y_AXIS));
-        connectedUsersPanel.setBackground(Utiltties.SECONDARY_COLOR);
+        connectedUsersPanel.setBackground(Utilities.SECONDARY_COLOR);
         connectedUsersPanel.setPreferredSize(new Dimension(200, getHeight()));
 
         JLabel connectedUsersLabel = new JLabel("Connected Users");
         connectedUsersLabel.setFont(new Font("Inter", Font.BOLD, 18));
-        connectedUsersLabel.setForeground(Utiltties.TEXT_COLOR);
+        connectedUsersLabel.setForeground(Utilities.TEXT_COLOR);
         connectedUsersPanel.add(connectedUsersLabel);
 
         add(connectedUsersPanel, BorderLayout.WEST);
@@ -107,18 +107,18 @@ public class ClientGUI extends JFrame  implements MessageListener{
     private void addChatComponents() {
         JPanel chatPanel = new JPanel();
         chatPanel.setLayout(new BorderLayout());
-        chatPanel.setBackground(Utiltties.TRANSPARENT_COLOR);
+        chatPanel.setBackground(Utilities.TRANSPARENT_COLOR);
 
         messagePanel = new JPanel();
-        messagePanel.setBorder(Utiltties.addPadding(7, 7, 7, 7));
+        messagePanel.setBorder(Utilities.addPadding(7, 7, 7, 7));
         messagePanel.setLayout(new BoxLayout(messagePanel, BoxLayout.Y_AXIS));
-        messagePanel.setBackground(Utiltties.TRANSPARENT_COLOR);
+        messagePanel.setBackground(Utilities.TRANSPARENT_COLOR);
 
         messagePanelScrollPane = new JScrollPane(messagePanel);
-        messagePanelScrollPane.setBackground(Utiltties.TRANSPARENT_COLOR);
+        messagePanelScrollPane.setBackground(Utilities.TRANSPARENT_COLOR);
         messagePanelScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
         messagePanelScrollPane.getVerticalScrollBar().setUnitIncrement(16);
-        messagePanelScrollPane.getVerticalScrollBar().setBackground(Utiltties.TRANSPARENT_COLOR);
+        messagePanelScrollPane.getVerticalScrollBar().setBackground(Utilities.TRANSPARENT_COLOR);
         messagePanelScrollPane.getViewport().addChangeListener(new ChangeListener() {
             @Override
             public void stateChanged(ChangeEvent e) {
@@ -130,9 +130,9 @@ public class ClientGUI extends JFrame  implements MessageListener{
 
 
         JPanel inputPanel = new JPanel();
-        inputPanel.setBorder(Utiltties.addPadding(7, 7, 7, 7));
+        inputPanel.setBorder(Utilities.addPadding(7, 7, 7, 7));
         inputPanel.setLayout(new BorderLayout());
-        inputPanel.setBackground(Utiltties.TRANSPARENT_COLOR);
+        inputPanel.setBackground(Utilities.TRANSPARENT_COLOR);
 
         JTextField inputField = getJTextField(inputPanel);
         inputPanel.add(inputField, BorderLayout.CENTER);
@@ -158,9 +158,9 @@ public class ClientGUI extends JFrame  implements MessageListener{
                 }
             }
         });
-        inputField.setBackground(Utiltties.SECONDARY_COLOR);
-        inputField.setForeground(Utiltties.TEXT_COLOR);
-        inputField.setBorder(Utiltties.addPadding(0, 6, 0, 6));
+        inputField.setBackground(Utilities.SECONDARY_COLOR);
+        inputField.setForeground(Utilities.TEXT_COLOR);
+        inputField.setBorder(Utilities.addPadding(0, 6, 0, 6));
         inputField.setFont(new Font("Inter", Font.BOLD, 16));
         inputField.setPreferredSize(new Dimension(inputPanel.getWidth(), 50));
         return inputField;
@@ -168,18 +168,18 @@ public class ClientGUI extends JFrame  implements MessageListener{
 
     private JPanel createChatMessageComponent(Message message) {
         JPanel chatMessage = new JPanel();
-        chatMessage.setBackground(Utiltties.TRANSPARENT_COLOR);
+        chatMessage.setBackground(Utilities.TRANSPARENT_COLOR);
         chatMessage.setLayout(new BoxLayout(chatMessage, BoxLayout.Y_AXIS));
-        chatMessage.setBorder(Utiltties.addPadding(15, 13, 10, 13));
+        chatMessage.setBorder(Utilities.addPadding(15, 13, 10, 13));
 
         JLabel usernameLabel = new JLabel(message.getUser());
         usernameLabel.setFont(new Font("Inter", Font.BOLD, 15));
-        usernameLabel.setForeground(Utiltties.TEXT_COLOR2);
+        usernameLabel.setForeground(Utilities.TEXT_COLOR2);
         chatMessage.add(usernameLabel);
 
          JLabel messageLabel = new JLabel(message.getMessage());
          messageLabel.setFont(new Font("Inter", Font.PLAIN, 18));
-         messageLabel.setForeground(Utiltties.TEXT_COLOR);
+         messageLabel.setForeground(Utilities.TEXT_COLOR);
          chatMessage.add(messageLabel);
 
          return chatMessage;
@@ -203,13 +203,13 @@ public class ClientGUI extends JFrame  implements MessageListener{
            connectedUsersPanel.remove(1);
        }
        JPanel userListPanel = new JPanel();
-       userListPanel.setBackground(Utiltties.TRANSPARENT_COLOR);
+       userListPanel.setBackground(Utilities.TRANSPARENT_COLOR);
        userListPanel.setLayout(new BoxLayout(userListPanel, BoxLayout.Y_AXIS));
 
        for(String user : users) {
            JLabel username = new JLabel();
            username.setText(user);
-           username.setForeground(Utiltties.TEXT_COLOR2);
+           username.setForeground(Utilities.TEXT_COLOR2);
            username.setFont(new Font("Inter", Font.BOLD, 16));
            userListPanel.add(username);
        }
